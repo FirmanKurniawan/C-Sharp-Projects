@@ -1,0 +1,14 @@
+byte buzzer = D6;      //Inisialisasi buzzer pada pin 9
+void setup() {
+  pinMode(buzzer, OUTPUT);  //Setting sebagai output
+} 
+void loop() {
+  for( int i = 262 ; i <= 523 ; i++){   //Nyalakan buzzer dengan peningkatan frekuensi
+    tone(buzzer,i); 
+    delay(5);
+  }
+  for( int i = 523 ; i >= 262 ; i--){   //Nyalakan buzzer dengan penurunan frekuensi
+    tone(buzzer,i);
+    delay(5);
+  }
+}
