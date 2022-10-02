@@ -1,0 +1,37 @@
+int LED[] = {D0,D1,D2,D3};
+int Button1 = D4;
+int Button2 = D5;
+
+void setup() {
+pinMode(Button1, INPUT_PULLUP);
+pinMode(Button2, INPUT_PULLUP);
+//inisialisasi LED pin 0,1,2 dan 3 adalah output
+pinMode(LED[0], OUTPUT);
+pinMode(LED[1], OUTPUT);
+pinMode(LED[2], OUTPUT);
+pinMode(LED[3], OUTPUT);
+
+for(int i = 0; i <= 3; i++){
+  pinMode(LED[i], OUTPUT);
+  }
+}
+
+void loop() {
+//menambahkan nilai untuk array/ LED[]
+int pin;
+int statusBtn1 = digitalRead(Button1);
+int statusBtn2 = digitalRead(Button2);
+if(statusBtn1 == LOW) {
+  pin = random(4);
+  //program untuk menyalakan dan mematikan LED
+  digitalWrite(LED[pin], HIGH);
+  delay(100);
+  digitalWrite(LED[pin], LOW); 
+  }
+if (statusBtn2 == LOW) {
+  for (int i = 0; i <= 3; i++){
+digitalWrite(LED[i], HIGH);
+delay(1000);
+digitalWrite(LED[i], LOW);}
+}
+}
