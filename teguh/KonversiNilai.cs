@@ -8,6 +8,7 @@ class KonversiNilaiAngka
     {
         int nilai;
 
+
         Console.WriteLine("masukan nilai");
         nilai = Convert.ToInt16(Console.ReadLine());
 
